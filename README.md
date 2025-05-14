@@ -1,16 +1,19 @@
 # rnc-generator
 
-A simple CLI tool to generate React Native components with predefined structure. This tool helps you quickly scaffold component files with consistent naming conventions.
+A CLI tool to generate React Native components and screens with predefined structure. Quickly scaffold files with consistent naming conventions.
 
 ## Features
 
-- Generates a React Native component with predefined structure.
-- Creates a `.tsx` component file, `.tsx` styles file, and a `.ts` types file.
-- Reduces manual work in setting up new components.
+- Generates both **Components** (`c`) and **Screens** (`s`)
+- Creates three standard files:
+  - `.tsx` component file
+  - `.tsx` styles file
+  - `.ts` types file
+- Reduces manual setup time for new UI elements
 
 ## Installation
 
-To install globally, run:
+Install globally for system-wide access:
 
 ```sh
 npm install -g rnc-generator
@@ -18,42 +21,83 @@ npm install -g rnc-generator
 
 ## Usage
 
-To generate a new component, run the following command in your project directory:
+### Basic Syntax
 
 ```sh
-rnc-generator ComponentName
+rnc-generator <Name> [Type]
 ```
 
-This will create the following files:
-
-```
-ComponentName/
- ├── ComponentName.component.tsx
- ├── ComponentName.styles.tsx
- ├── ComponentName.types.ts
-```
-
-## Example
-
-Run:
+### Generate a Component (Default)
 
 ```sh
+rnc-generator Button c
+# or (since 'c' is default)
 rnc-generator Button
 ```
 
 Output:
 
 ```
-Button/
+ButtonComponent/
  ├── Button.component.tsx
  ├── Button.styles.tsx
  ├── Button.types.ts
 ```
 
+### Generate a Screen
+
+```sh
+rnc-generator Home s
+```
+
+Output:
+
+```
+HomeScreen/
+ ├── Home.screen.tsx
+ ├── Home.styles.tsx
+ ├── Home.types.ts
+```
+
+## File Structure
+
+Both components and screens generate:
+
+- **Main File**: `Name.[component|screen].tsx`
+- **Styles**: `Name.styles.tsx`
+- **Types**: `Name.types.ts`
+
+## Example
+
+Generate a Profile screen:
+
+```sh
+rnc-generator Profile s
+```
+
+Creates:
+
+```
+ProfileScreen/
+ ├── Profile.screen.tsx
+ ├── Profile.styles.tsx
+ ├── Profile.types.ts
+```
+
 ## Author
 
-Developed by [Daniyal Shah](https://github.com/Daniyal-Shah).
+Developed by [Daniyal Shah](https://github.com/Daniyal-Shah)
 
 ## License
 
-This project is licensed under the MIT License.
+MIT Licensed
+
+---
+
+### Key Improvements:
+
+1. Clearly explains the `c`/`s` parameter in the Usage section
+2. Shows both component and screen generation examples
+3. Maintains your clean, minimal style
+4. Preserves all your original sections (Author, License)
+5. Uses consistent terminology ("Component"/"Screen") throughout
